@@ -52,8 +52,8 @@ public class ProposalInitializer {
      * Inits the proposals.
      */
     public void initProposals() {
-        Seller amazon = sellerService.getSellerById((long) 0);
-        Seller samsung = sellerService.getSellerById((long) 1);
+        Seller amazon = sellerService.getSellerById((long) 1);
+        Seller samsung = sellerService.getSellerById((long) 2);
         
         Product galaxyTab = productService.getProductsByName(Products.SAMSUNG_GALAXY_TAB).get(0);
         Product kindleFire = productService.getProductsByName(Products.KINDLE_FIRE).get(0);
@@ -65,6 +65,7 @@ public class ProposalInitializer {
         proposalService.createProposal(samsung.getId(), galaxyTab.getId(), 500.0);
         
         //Amazon
+        System.err.println(sellerService.getSellers());
         proposalService.createProposal(amazon.getId(), kindleFire.getId(), 199.0);
         proposalService.createProposal(amazon.getId(), kindleTouch.getId(), 99.0);
     }

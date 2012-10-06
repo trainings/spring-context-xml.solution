@@ -6,10 +6,18 @@
 
 	<bean id="orderService" class="org.shop.api.impl.OrderServiceImpl">
 		<property name="orderRepository" ref="orderRepository" />
-		<property name="itemRepository" ref="itemRepository" />
+		<property name="itemService" ref="itemService"/>
 	</bean>
 	
-	<bean id="proposalService" class="org.shop.api.impl.ProposalServiceImpl" p:repository-ref="proposalRepository"/>
+	<bean id="itemService" class="org.shop.api.impl.ItemServiceImpl">
+		<constructor-arg index="0" ref="itemRepository"/>
+	</bean>
+	
+	<bean id="proposalService" class="org.shop.api.impl.ProposalServiceImpl">
+		<property name="productService" ref="productService"/>
+		<property name="sellerService" ref="sellerService"/>
+		<property name="repository" ref="proposalRepository"/>
+	</bean>
 	
 	<bean id="productService" class="org.shop.api.impl.ProductServiceImpl">
 		<constructor-arg ref="productRepository"/>
