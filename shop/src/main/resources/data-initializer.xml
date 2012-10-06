@@ -18,14 +18,23 @@
 	</bean>
 
 	<bean class="org.shop.SellerInitializer">
-		<constructor-arg ref="sellerService"/>
-		<property name="sellerNames">
-			<list>
-				<util:constant static-field="org.shop.common.Sellers.AMAZON"/>
-				<util:constant static-field="org.shop.common.Sellers.SAMSUNG"/>
-				<value type="java.lang.String">Apple</value>
-			</list>
-		</property>
+		<constructor-arg>
+			<map key-type="java.lang.Long" value-type="java.lang.String">
+				<entry>
+					<key>1</key>
+					<util:constant static-field="org.shop.common.Sellers.AMAZON"/>
+				</entry>
+				<entry>
+					<key>2</key>
+					<util:constant static-field="org.shop.common.Sellers.SAMSUNG"/>
+				</entry>
+				<entry>
+					<key>3</key>
+					<value>Apple</value>
+				</entry>
+			</map>
+		</constructor-arg>
+		<property name="sellerService" ref="sellerService"/>
 	</bean>
 
 	
