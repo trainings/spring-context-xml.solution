@@ -19,9 +19,7 @@
 		<property name="repository" ref="proposalRepository"/>
 	</bean>
 	
-	<bean id="productService" class="org.shop.api.impl.ProductServiceImpl">
-		<constructor-arg ref="productRepository"/>
-	</bean>
+	<bean id="productService" class="org.shop.api.impl.ProductServiceImpl" autowire="constructor"/>
 	
 	<bean id="sellerService" class="org.shop.api.impl.SellerServiceImpl" autowire="byType"/>
 	
