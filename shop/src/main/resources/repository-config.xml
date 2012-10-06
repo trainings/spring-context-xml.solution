@@ -14,6 +14,8 @@
 	
 	<bean id="proposalRepository" class="org.shop.repository.map.ProposalMapRepository"/>
 	
-	<bean id="userRepository" class="org.shop.repository.map.UserMapRepository"/>
+	<bean id="userRepositoryFactory" class="org.shop.repository.factory.UserRepositoryFactory"/>
+	
+	<bean id="userRepository" factory-bean="userRepositoryFactory" factory-method="createUserRepository"/>
 	
 </beans>
