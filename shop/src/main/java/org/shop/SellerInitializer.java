@@ -18,17 +18,22 @@ public class SellerInitializer {
     
     /** The seller names. */
     private Map<Long, String> sellerNames = Collections.emptyMap();
-    
+
     /**
      * Instantiates a new seller initializer.
      *
-     * @param sellerService the seller service
+     * @param sellerNames the sellers id and name
      */
     public SellerInitializer(Map<Long, String> sellerNames) {
         super();
         this.sellerNames = sellerNames;
     }
     
+    /**
+     * Sets the seller service.
+     *
+     * @param sellerService the new seller service
+     */
     public void setSellerService(SellerService sellerService) {
         this.sellerService = sellerService;
     }

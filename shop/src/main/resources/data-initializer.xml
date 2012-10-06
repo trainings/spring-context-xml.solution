@@ -20,16 +20,13 @@
 	<bean class="org.shop.SellerInitializer">
 		<constructor-arg>
 			<map key-type="java.lang.Long" value-type="java.lang.String">
-				<entry>
-					<key>1</key>
+				<entry key="1">
 					<util:constant static-field="org.shop.common.Sellers.AMAZON"/>
 				</entry>
-				<entry>
-					<key>2</key>
+				<entry key="2">
 					<util:constant static-field="org.shop.common.Sellers.SAMSUNG"/>
 				</entry>
-				<entry>
-					<key>3</key>
+				<entry key="3">
 					<value>Apple</value>
 				</entry>
 			</map>
