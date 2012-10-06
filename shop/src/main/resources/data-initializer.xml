@@ -11,11 +11,7 @@
 		<constructor-arg ref="productService"/>
 	</bean>
 
-	<bean class="org.shop.ProposalInitializer">
-		<property name="productService" ref="productService"/>
-		<property name="proposalService" ref="proposalService"/>
-		<property name="sellerService" ref="sellerService"/>
-	</bean>
+	<bean class="org.shop.ProposalInitializer" autowire="byName"/>
 
 	<bean class="org.shop.SellerInitializer">
 		<constructor-arg>

@@ -4,15 +4,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="productRepository" class="org.shop.repository.map.ProductMapRepository"/>
+	<bean name="productRepository" class="org.shop.repository.map.ProductMapRepository"/>
 	
 	<bean id="orderRepository" class="org.shop.repository.map.OrderMapRepository"/>
 	
-	<bean id="sellerRepository" class="org.shop.repository.map.SellerMapRepository"/>
+	<bean name="sellerRepository" class="org.shop.repository.map.SellerMapRepository"/>
 	
 	<bean id="itemRepository" class="org.shop.repository.map.ItemMapRepository"/>
 	
-	<bean id="proposalRepository" class="org.shop.repository.map.ProposalMapRepository"/>
+	<bean name="proposalRepository" class="org.shop.repository.map.ProposalMapRepository"/>
 	
 	<bean id="userRepositoryFactory" class="org.shop.repository.factory.UserRepositoryFactory"/>
 	
