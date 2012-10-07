@@ -1,5 +1,7 @@
 package org.shop;
 
+import javax.annotation.PostConstruct;
+
 /**
  * The main Data Initializer util class.
  */
@@ -20,6 +22,7 @@ public class DataInitializer {
     /**
      * Inits the data.
      */
+    @PostConstruct
     public void initData() {
         sellerInitializer.initSellers();
         userInitializer.initUsers();
