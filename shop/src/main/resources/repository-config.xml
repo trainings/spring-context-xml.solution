@@ -6,7 +6,9 @@
 
 	<bean name="productRepository" class="org.shop.repository.map.ProductMapRepository"/>
 	
-	<bean id="orderRepository" class="org.shop.repository.map.OrderMapRepository"/>
+	<bean id="orderRepository" class="org.shop.repository.map.OrderMapRepository">
+		<constructor-arg type="long" value="${repository.order.pk}"/>
+	</bean>
 	
 	<bean name="sellerRepository" class="org.shop.repository.map.SellerMapRepository"/>
 	
