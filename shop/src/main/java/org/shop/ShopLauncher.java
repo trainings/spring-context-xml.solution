@@ -35,7 +35,9 @@ public class ShopLauncher {
         //obtain bean by type
         ItemService itemService = context.getBean(ItemService.class);
         
-        UserService userService = context.getBean(UserService.class);
+        //obtain bean by alias and type
+        UserService userService = context.getBean("clientService", UserService.class);
+        
         ProposalService proposalService = context.getBean(ProposalService.class);
         
         Product galaxy = productService.getProductsByName("Samsung Galaxy Tab").get(0);
