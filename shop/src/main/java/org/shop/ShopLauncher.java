@@ -26,9 +26,15 @@ public class ShopLauncher {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
         
-        ProductService productService = context.getBean(ProductService.class); 
-        OrderService orderService = context.getBean(OrderService.class);
+        //obtain bean by id/name and type
+        ProductService productService = context.getBean("productService", ProductService.class);
+        
+        //obtain bean by id/name
+        OrderService orderService = (OrderService) context.getBean("orderService");
+        
+        //obtain bean by type
         ItemService itemService = context.getBean(ItemService.class);
+        
         UserService userService = context.getBean(UserService.class);
         ProposalService proposalService = context.getBean(ProposalService.class);
         
